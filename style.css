@@ -64,6 +64,7 @@ body {
 .wraper {
     display: grid;
     gap: 2rem;
+    padding-inline: 1rem;
 }
 
 .main-card {
@@ -119,18 +120,18 @@ body {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    animation: showCard 0.4s linear forwards;
+    animation: showCard 0.8s linear forwards;
     display: grid;
 }
 
 @keyframes showCard {
     from{
         opacity: 0;
-        transform: scale(0);
+        /* transform: scale(0); */
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        /* transform: scale(1); */
     }
 }
 
@@ -247,8 +248,7 @@ body {
     }
 
     .name-container {
-        display: grid;
-        padding-right: 4rem;
+        padding-right: 2rem;
     }
 
     .name {

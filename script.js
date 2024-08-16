@@ -56,6 +56,13 @@ function updateUI(category) {
 
 
 fetchData()
+updateUI('Weekly')
+
+if (fetchedData){
+    
+}else {
+    console.log('data not uploaded')
+}
 
 statBtns.forEach(btn => btn.addEventListener('click', ()=> {
     let category = btn.dataset.name
@@ -66,6 +73,3 @@ statBtns.forEach(btn => btn.addEventListener('click', ()=> {
     }
     
 }))
-
-let selfCare = 'self care'
-console.log(selfCare.replace(' ', ''))
