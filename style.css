@@ -1,0 +1,294 @@
+/* css-reset */
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    width: 1.5rem;
+    height: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+/* custom-properties */
+
+:root {
+    /* Primary */
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+    /* Neutral */
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+/* utility classes */
+
+.card {
+    border-radius: 12px;
+    font-weight: 300;
+}
+
+.txt-white {
+    color: #ffff;
+}
+
+/* main-style */
+
+body {
+    margin-block: 2rem;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    gap: 2rem;
+    font-family: 'Rubik';
+    line-height: 1.5;
+    background-color: var(--Very-dark-blue);
+    color: var(--Pale-Blue);
+}
+
+.wraper {
+    display: grid;
+    gap: 2rem;
+}
+
+.main-card {
+    background-color:var(--Dark-blue);
+    display: grid;
+}
+
+.main-info {
+    display: flex;
+    align-items: center;
+    background-color: var(--Blue);
+    border-radius: inherit;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.img {
+    width: 70px;
+    border: 4px solid var(--Pale-Blue);
+    border-radius: 50%;
+}
+
+.name {
+    font-size: 1.2rem;
+}
+
+.tools-container {
+    background-color: var(--Dark-blue);
+    padding: 1.5rem;
+    border-radius: 0 0 12px 12px;
+}
+
+.tools-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tools-item {
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+}
+
+.tools-item:hover {
+    color: #ffff;
+}
+
+.activity-card  {
+    --custom-padding: 2rem;
+    --icon-url:'images/icon-work.svg';
+    padding-top: var(--custom-padding);
+    background-color: var(--Light-red-work);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    animation: showCard 0.4s linear forwards;
+    display: grid;
+}
+
+@keyframes showCard {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.activity-card.work {
+    background-color: var(--Light-red-work);
+}
+
+.activity-card.work::after{
+    content: url('images/icon-work.svg');
+}
+
+.activity-card.play {
+    background-color: var(--Soft-blue-play);
+}
+
+.activity-card.play::after{
+    content: url('images/icon-play.svg');
+}
+
+.activity-card.study {
+    background-color: var(--Light-red-study);
+}
+
+.activity-card.study::after{
+    content: url('images/icon-study.svg');
+}
+
+.activity-card.exercise {
+    background-color: var(--Lime-green-exercise);
+}
+
+.activity-card.exercise::after{
+    content: url('images/icon-exercise.svg');
+}
+
+.activity-card.social {
+    background-color: var(--Violet-social);
+}
+
+.activity-card.social::after{
+    content: url('images/icon-social.svg');
+}
+
+.activity-card.selfcare {
+    background-color: var(--Soft-orange-self-care);
+}
+
+.activity-card.selfcare::after{
+    content: url('images/icon-self-care.svg');
+}
+
+.activity-card::after {
+    content: url('images/icon-work.svg');
+    position: absolute;
+    top: calc(-1 * (var(--custom-padding) / 2));
+    right: calc(var(--custom-padding) / 2);
+    z-index: -1;
+}
+
+.activity-card-inner {
+    background-color: var(--Dark-blue);
+    padding: 1.5rem 1rem;
+}
+
+
+.activity-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.activity-card-title::after {
+    content: url('images/icon-ellipsis.svg');
+}
+
+.small-txt {
+    font-weight: 500;
+}
+
+.activity-card-stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.activity-card-stats-current {
+    font-size: 2rem;
+    font-weight: 300;
+}
+/* front end mentor css style */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
+
+@media screen and (min-width:700px) {
+    .wraper {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .main-card {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name-container {
+        display: grid;
+        padding-right: 4rem;
+    }
+
+    .name {
+        font-size: 2rem;
+        line-height: 1.1;
+        width: min-content;
+    }
+
+    .persons-info-txt {
+        line-height: 1;
+    }
+
+    .main-info {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        flex-grow: 1;
+        /* padding-right: 4rem;   */   /*changed this*/
+    }
+
+    .tools-items {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .activity-card-stats-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .activity-card-inner {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .activity-card-stats-current {
+        font-size: 2.4rem;
+    }
+}
