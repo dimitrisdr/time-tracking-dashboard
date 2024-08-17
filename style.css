@@ -115,12 +115,10 @@ body {
 .activity-card  {
     --custom-padding: 2rem;
     padding-top: var(--custom-padding);
-    background-color: var(--Light-red-work);
     position: relative;
     z-index: 1;
     overflow: hidden;
     animation: showCard 0.8s linear forwards;
-
 }
 
 @keyframes showCard {
@@ -134,8 +132,10 @@ body {
     }
 }
 
+
+
 .activity-card.work {
-    background-color: var(--Light-red-work);
+    background: linear-gradient(180deg, var(--Light-red-work) 50% , var(--Dark-blue) 50%);
 }
 
 .activity-card.work::after{
@@ -143,7 +143,8 @@ body {
 }
 
 .activity-card.play {
-    background-color: var(--Soft-blue-play);
+    background: linear-gradient(180deg, var(--Soft-blue-play) 50% , var(--Dark-blue) 50%);
+
 }
 
 .activity-card.play::after{
@@ -151,7 +152,7 @@ body {
 }
 
 .activity-card.study {
-    background-color: var(--Light-red-study);
+    background: linear-gradient(180deg, var(--Light-red-study) 50% , var(--Dark-blue) 50%);
 }
 
 .activity-card.study::after{
@@ -159,7 +160,7 @@ body {
 }
 
 .activity-card.exercise {
-    background-color: var(--Lime-green-exercise);
+    background: linear-gradient(180deg, var(--Lime-green-exercise) 50% , var(--Dark-blue) 50%);
 }
 
 .activity-card.exercise::after{
@@ -167,6 +168,7 @@ body {
 }
 
 .activity-card.social {
+    background: linear-gradient(180deg, var(--Violet-social) 50% , var(--Dark-blue) 50%);
     background-color: var(--Violet-social);
 }
 
@@ -175,6 +177,7 @@ body {
 }
 
 .activity-card.selfcare {
+    background: linear-gradient(180deg, var(--Soft-orange-self-care) 50% , var(--Dark-blue) 50%);
     background-color: var(--Soft-orange-self-care);
 }
 
@@ -192,7 +195,8 @@ body {
 
 .activity-card-inner {
     background-color: var(--Dark-blue);
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
 
 
 }
@@ -290,7 +294,7 @@ body {
     }
 
     .activity-card-title::after {
-        margin-bottom: 0.2 rem;
+        margin-bottom: 0.2rem;
     }
 
     .activity-card-stats-current {
