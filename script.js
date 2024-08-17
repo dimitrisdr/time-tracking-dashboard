@@ -1,4 +1,3 @@
-
 let statBtns = document.querySelectorAll('.tools-item');
 const toolsMapping = {
     'Daily': 'last-Day',
@@ -16,11 +15,15 @@ function fetchData(){
         }
         return request.json()
         }).then((data) => {
-            fetchedData = data
-            console.log('data fecthed', fetchedData)
+            
+            if (data){
+                fetchedData = data
+                updateUI('Weekly')
+                console.log('data fecthed', fetchedData)
+            }
+       
         })    
     }
-
 
 function makeTimeItem(dataSet, category){
     let catLowerCase = category.toLowerCase()
@@ -42,7 +45,6 @@ function makeTimeItem(dataSet, category){
 
 }
 
-
 function updateUI(category) {
     let wraper = document.querySelector('.wraper');
     Array.from(wraper.children).forEach(el => {
@@ -54,15 +56,7 @@ function updateUI(category) {
     fetchedData.forEach(cat => wraper.appendChild(makeTimeItem(cat, category)))
 }
 
-
 fetchData()
-updateUI('Weekly')
-
-if (fetchedData){
-    
-}else {
-    console.log('data not uploaded')
-}
 
 statBtns.forEach(btn => btn.addEventListener('click', ()=> {
     let category = btn.dataset.name

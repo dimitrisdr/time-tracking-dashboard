@@ -114,14 +114,13 @@ body {
 
 .activity-card  {
     --custom-padding: 2rem;
-    --icon-url:'images/icon-work.svg';
     padding-top: var(--custom-padding);
     background-color: var(--Light-red-work);
     position: relative;
     z-index: 1;
     overflow: hidden;
     animation: showCard 0.8s linear forwards;
-    display: grid;
+
 }
 
 @keyframes showCard {
@@ -194,6 +193,7 @@ body {
 .activity-card-inner {
     background-color: var(--Dark-blue);
     padding: 1.5rem 1rem;
+    width: 100%;
 }
 
 
@@ -234,10 +234,10 @@ body {
 }
 
 
-@media screen and (min-width:700px) {
+@media screen and (min-width:750px) {
     .wraper {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .main-card {
@@ -286,6 +286,10 @@ body {
     .activity-card-inner {
         display: grid;
         gap: 1rem;
+    }
+
+    .activity-card-title::after {
+        margin-bottom: 0.2 rem;
     }
 
     .activity-card-stats-current {
